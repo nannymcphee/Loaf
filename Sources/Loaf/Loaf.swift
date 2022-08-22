@@ -314,6 +314,11 @@ final class LoafViewController: UIViewController {
         })
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.delegate?.loafDidDismiss()
+    }
+    
     @objc private func handleTap() {
         dismiss(animated: true) { [weak self] in
             self?.delegate?.loafDidDismiss()
